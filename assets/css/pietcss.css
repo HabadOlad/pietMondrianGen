@@ -1,5 +1,27 @@
+button {
+  background: #fee715;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
+
 canvas {
-  width: 400px;
-  height: 400px;
-  border: 10px solid #000;
+  width: 500px;
+  height: 500px;
+  border: 7.5px solid #000;
 }
