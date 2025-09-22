@@ -8,8 +8,7 @@ canvas.height = size * dpr;
 //These two lines set the actual pixel dimensions of the canvas. Instead of using the CSS width and height, which only scale the element, these properties change the number of pixels the browser has to work with.
 context.scale(dpr, dpr); //This line scales the entire canvas's coordinate system.This method scales the canvas's coordinate system by the dpr value on both the X and Y axes.
 context.lineWidth = 8;
-//
-//Cycle through the squares within the canvas
+
 let squares = [
   {
     x: 0,
