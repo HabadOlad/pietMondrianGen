@@ -19,11 +19,32 @@ let squares = [
 ]; //this variable squares allows us to make an array of squares
 
 //function to draw the squares within the grid
+/*
+const { x, y } = coordinates is extracting the x and y variables out of the object we’re passing, eg {x: 160} or {y: 160}
+We’re looping backwards through the squares with (var i = squares.length - 1; i >= 0; i--) this is because we’re taking elements out of the loop (and replacing them with 2 squares), looping backwards means the order will stay the same, and the new items won’t be split again.
 
-//function splitSquaresWith(coordinates) {
-// Loops through the squares, and find if
-// one should be split
-//}
+*/
+
+function splitSquaresWith(coordinates) {
+  const { x, y } = coordinates;
+  for (let i = squares.length - 1; i >= 0; i--) {
+    // Loops through the squares, and find if one should be split
+    const square = squares[i];
+    if (x && x > square.x && x < square.x + square.width) {
+      if (Math.random() > 0.5) {
+        squares.splice(i, 1);
+        splitOnX(square, x);
+      }
+    }
+
+    if (y && y > square.y && y < square.y + square.height) {
+      if (Math.random() > 0.5) {
+        squares.splice(i, 1);
+        splitOnY(square, y);
+      }
+    }
+  }
+}
 
 //function splitOnX(square, splitAt) {
 // Create two new squares, based on
